@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fútbol - Resultados, Clasificaciones, Noticias y Fichajes</title>
+  <link rel="stylesheet" href="estilos.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚽</span>
+      <h1>Fútbol Central</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="pages/ligas.html">Ligas</a>
+      <a href="pages/champions.html">Champions</a>
+      <a href="pages/europa.html">Europa</a>
+      <a href="pages/conference.html">Conference</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Resultados • Clasificaciones • Noticias • Fichajes</h2>
+      <p>Web demo lista para publicar en GitHub Pages. Cambia el JSON para actualizar todo.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>🟢 Resultados</h3>
+        <p>Partidos del día y próximos encuentros (desde JSON).</p>
+      </article>
+      <article class="card">
+        <h3>📊 Clasificación</h3>
+        <p>Tablas por liga/competición.</p>
+      </article>
+      <article class="card">
+        <h3>📰 Noticias</h3>
+        <p>Últimas novedades de cada competición.</p>
+      </article>
+      <article class="card">
+        <h3>🔁 Fichajes</h3>
+        <p>Altas y bajas (ejemplo editable).</p>
+      </article>
+    </section>
+
+    <section class="cta">
+      <h3>➡️ Empieza aquí</h3>
+      <p>Selecciona una liga desde el menú o entra a “Ligas”.</p>
+      <a class="btn" href="pages/ligas.html">Ver Ligas</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hecho con ❤️ para GitHub Pages.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
