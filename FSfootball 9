@@ -1,0 +1,17 @@
+{
+  "Champions League 2026-27": {
+    "resultados": [
+      { "local": "Real Madrid", "golesLocal": 2, "visitante": "Chelsea", "golesVisitante": 1, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Real Madrid", "pj": 3, "pts": 9 },
+      { "pos": 2, "equipo": "Chelsea", "pj": 3, "pts": 6 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Partido vibrante en Europa", "descripcion": "Resumen y claves del duelo." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Mateo Salvatierra", "equipo": "Real Madrid", "detalle": "Refuerzo defensivo para la fase decisiva." }
+    ]
+  }
+}
