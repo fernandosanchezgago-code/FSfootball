@@ -1,0 +1,17 @@
+{
+  "Europa League 2026-27": {
+    "resultados": [
+      { "local": "Villarreal", "golesLocal": 1, "visitante": "Roma", "golesVisitante": 2, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Roma", "pj": 4, "pts": 10 },
+      { "pos": 2, "equipo": "Villarreal", "pj": 4, "pts": 7 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Giro de guion en el segundo tiempo", "descripcion": "Lo mejor del encuentro y reacciones post-partido." }
+    ],
+    "fichajes": [
+      { "tipo": "Baja", "jugador": "Nico Salas", "equipo": "Villarreal", "detalle": "Se marcha a otra liga europea." }
+    ]
+  }
+}
