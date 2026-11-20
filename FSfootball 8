@@ -1,0 +1,100 @@
+{
+  "LaLiga": {
+    "resultados": [
+      { "local": "Real Madrid", "golesLocal": 2, "visitante": "Sevilla", "golesVisitante": 1, "fecha": "2026-11-20" },
+      { "local": "Barcelona", "golesLocal": 1, "visitante": "Valencia", "golesVisitante": 1, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Real Madrid", "pj": 12, "pts": 30 },
+      { "pos": 2, "equipo": "Barcelona", "pj": 12, "pts": 28 },
+      { "pos": 3, "equipo": "Atlético", "pj": 12, "pts": 25 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "El derbi se define en los últimos minutos", "descripcion": "Resumen del fin de semana y reacciones de los entrenadores." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Juan Pérez", "equipo": "Real Madrid", "detalle": "Llega cedido por una temporada con opción." },
+      { "tipo": "Baja", "jugador": "Álvaro Costa", "equipo": "Sevilla", "detalle": "Sale traspasado tras finalizar su contrato." }
+    ]
+  },
+
+  "Premier League": {
+    "resultados": [
+      { "local": "Arsenal", "golesLocal": 3, "visitante": "Newcastle", "golesVisitante": 2, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Arsenal", "pj": 12, "pts": 29 },
+      { "pos": 2, "equipo": "Liverpool", "pj": 12, "pts": 27 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Racha goleadora del Arsenal", "descripcion": "Victoria clave y líderes firmando una semana redonda." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Marcus Lee", "equipo": "Liverpool", "detalle": "Refuerzo ofensivo tras destacar en su liga." }
+    ]
+  },
+
+  "Bundesliga": {
+    "resultados": [
+      { "local": "Bayern", "golesLocal": 2, "visitante": "Leipzig", "golesVisitante": 0, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Bayern", "pj": 12, "pts": 32 },
+      { "pos": 2, "equipo": "Leipzig", "pj": 12, "pts": 26 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Bayern controla el partido", "descripcion": "Portería a cero y juego sólido para seguir arriba." }
+    ],
+    "fichajes": [
+      { "tipo": "Baja", "jugador": "Timo Brandt", "equipo": "Wolfsburg", "detalle": "Se marcha tras perder protagonismo." }
+    ]
+  },
+
+  "Ligue 1": {
+    "resultados": [
+      { "local": "PSG", "golesLocal": 1, "visitante": "Lyon", "golesVisitante": 0, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "PSG", "pj": 12, "pts": 30 },
+      { "pos": 2, "equipo": "Marseille", "pj": 12, "pts": 25 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "El PSG mantiene el ritmo", "descripcion": "Triunfo ajustado con un gol en la primera parte." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Zein Haddad", "equipo": "Marseille", "detalle": "Firma hasta final de temporada." }
+    ]
+  },
+
+  "Serie A": {
+    "resultados": [
+      { "local": "Juventus", "golesLocal": 2, "visitante": "Inter", "golesVisitante": 2, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Inter", "pj": 12, "pts": 29 },
+      { "pos": 2, "equipo": "Juventus", "pj": 12, "pts": 28 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Partidazo con final eléctrico", "descripcion": "Empate agónico y ritmo altísimo en el derbi italiano." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Luca Marino", "equipo": "Juventus", "detalle": "Llega para reforzar el mediocampo." }
+    ]
+  },
+
+  "LaLiga Hypermotion": {
+    "resultados": [
+      { "local": "Eibar", "golesLocal": 2, "visitante": "Sporting Gijón", "golesVisitante": 1, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Eibar", "pj": 12, "pts": 27 },
+      { "pos": 2, "equipo": "Sporting Gijón", "pj": 12, "pts": 24 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "La pelea por el ascenso se aprieta", "descripcion": "Jornada clave con sorpresas en la parte alta." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Adrián Marco", "equipo": "Eibar", "detalle": "Nuevo delantero con objetivo de playoff." }
+    ]
+  }
+}
