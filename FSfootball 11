@@ -1,0 +1,17 @@
+{
+  "Conference League 2026-27": {
+    "resultados": [
+      { "local": "Betis", "golesLocal": 0, "visitante": "Gent", "golesVisitante": 1, "fecha": "2026-11-20" }
+    ],
+    "clasificacion": [
+      { "pos": 1, "equipo": "Gent", "pj": 3, "pts": 7 },
+      { "pos": 2, "equipo": "Betis", "pj": 3, "pts": 3 }
+    ],
+    "noticias": [
+      { "fecha": "2026-11-20", "titulo": "Partido tenso y decidido por detalles", "descripcion": "Análisis rápido del encuentro." }
+    ],
+    "fichajes": [
+      { "tipo": "Alta", "jugador": "Rafael Lobo", "equipo": "Betis", "detalle": "Llega para aportar profundidad por banda." }
+    ]
+  }
+}
