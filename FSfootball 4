@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ligas - Fútbol Central</title>
+  <link rel="stylesheet" href="../estilos.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚽</span>
+      <h1>Fútbol Central</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="ligas.html">Ligas</a>
+      <a href="champions.html">Champions</a>
+      <a href="europa.html">Europa</a>
+      <a href="conference.html">Conference</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="pageHeader">
+      <h2>🏆 Ligas (5 grandes + LaLiga Hypermotion)</h2>
+      <div>
+        <label for="compSelect" style="color:var(--muted);font-weight:800;margin-right:10px;">Elige liga:</label>
+        <select id="compSelect" class="select" data-kind="ligas"></select>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="panel" id="panelIzq">
+        <div id="resultados"></div>
+        <div id="clasificacion"></div>
+      </section>
+
+      <section class="panel" id="panelDer">
+        <div id="noticias"></div>
+        <div id="fichajes"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Datos de ejemplo. Edita los archivos JSON.</p>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
