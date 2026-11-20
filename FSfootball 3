@@ -1,0 +1,228 @@
+// Carga y renderiza las secciones: resultados, clasificación, noticias y fichajes
+async function loadJSON(path){
+  const res = await fetch(path);
+  if(!res.ok) throw new Error("No se pudo cargar: " + path);
+  return await res.json();
+}
+
+function el(tag, attrs = {}, children = []){
+  const node = document.createElement(tag);
+  Object.entries(attrs).forEach(([k,v]) => node.setAttribute(k,v));
+  children.forEach(c => node.append(c));
+  return node;
+}
+
+function safeText(x){ return document.createTextNode(String(x ?? "")); }
+
+function renderResultados(data, mount){
+  mount.innerHTML = "";
+  const title = document.createElement("h3");
+  title.textContent = "🟢 Resultados";
+  mount.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "list";
+
+  (data.resultados || []).forEach(m => {
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `
+      <div><b>${m.local}</b></div>
+      <div class="score">${m.golesLocal} - ${m.golesVisitante}</div>
+      <div><b>${m.visitante}</b></div>
+      <div class="meta">${m.fecha}</div>
+    `;
+    list.appendChild(row);
+  });
+
+  mount.appendChild(list);
+}
+
+function renderClasificacion(data, mount){
+  mount.innerHTML = "";
+  const title = document.createElement("h3");
+  title.textContent = "📊 Clasificación";
+  mount.appendChild(title);
+
+  const table = document.createElement("table");
+  table.className = "table";
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>#</th><th>Equipo</th><th>PJ</th><th>Pts</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  `;
+  const tbody = table.querySelector("tbody");
+  (data.clasificacion || []).forEach(t => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${t.pos}</td>
+      <td>${t.equipo}</td>
+      <td>${t.pj}</td>
+      <td><b>${t.pts}</b></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  mount.appendChild(table);
+}
+
+function renderNoticias(data, mount){
+  mount.innerHTML = "";
+  const title = document.createElement("h3");
+  title.textContent = "📰 Noticias";
+  mount.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "list";
+
+  (data.noticias || []).forEach(n => {
+    const item = document.createElement("div");
+    item.className = "row";
+    item.innerHTML = `
+      <div class="meta">${n.fecha}</div>
+      <div><b>${n.titulo}</b></div>
+      <div class="muted">${n.descripcion}</div>
+    `;
+    list.appendChild(item);
+  });
+
+  mount.appendChild(list);
+}
+
+function renderFichajes(data, mount){
+  mount.innerHTML = "";
+  const title = document.createElement("h3");
+  title.textContent = "🔁 Fichajes";
+  mount.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "list";
+
+  (data.fichajes || []).forEach(f => {
+    const item = document.createElement("div");
+    item.className = "row";
+    const tipoColor = f.tipo === "Alta" ? "var(--good)" : "var(--bad)";
+    item.innerHTML = `
+      <div class="pill" style="border-color:${tipoColor}; color:${tipoColor}">${f.tipo}</div>
+      <div><b>${f.jugador}</b> — ${f.equipo}</div>
+      <div class="muted">${f.detalle}</div>
+    `;
+    list.appendChild(item);
+  });
+
+  mount.appendChild(list);
+}
+
+function injectPageStyles(){
+  const style = document.createElement("style");
+  style.textContent = `
+    .pageHeader{
+      padding:18px; border:1px solid rgba(255,255,255,.08);
+      background:rgba(17,27,51,.55); border-radius:14px;
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .pageHeader h2{margin:0}
+    .select{
+      background:#0f1730;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:700;
+      outline:none;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){
+      .layout{grid-template-columns: 1fr}
+    }
+    .panel{
+      background:rgba(17,27,51,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:14px;
+      min-height: 220px;
+    }
+    .panel h3{margin:0 0 10px}
+    .list{display:flex; flex-direction:column; gap:10px}
+    .row{
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.15);
+      border-radius:12px;
+      padding:10px;
+      display:grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap:8px 10px;
+      align-items:center;
+    }
+    .row .meta{grid-column: 1 / -1; color:var(--muted); font-size:12px}
+    .score{font-weight:900}
+    .muted{grid-column: 1 / -1; color:var(--muted); font-size:13px}
+    .table{width:100%; border-collapse:collapse}
+    .table th, .table td{
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:10px 6px;
+      text-align:left;
+    }
+    .table th{color:var(--muted); font-size:13px}
+    .pill{
+      grid-column: 1 / -1;
+      width:max-content;
+      padding:6px 10px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+    .row > div{white-space:nowrap}
+  `;
+  document.head.appendChild(style);
+}
+
+async function init(){
+  injectPageStyles();
+
+  const mountRoot = document.getElementById("mount");
+  const selector = document.getElementById("compSelect");
+
+  if(!mountRoot || !selector) return;
+
+  const kind = selector.dataset.kind; // "ligas" | "champions" | "europa" | "conference"
+  const data = await loadJSON(`data/${kind}.json`);
+
+  function renderForKey(key){
+    const item = data[key];
+    if(!item) return;
+
+    // panel izquierdo
+    renderResultados(item, document.getElementById("resultados"));
+    renderClasificacion(item, document.getElementById("clasificacion"));
+
+    // panel derecho
+    renderNoticias(item, document.getElementById("noticias"));
+    renderFichajes(item, document.getElementById("fichajes"));
+  }
+
+  // rellenar dropdown
+  Object.keys(data).forEach(k => {
+    const opt = document.createElement("option");
+    opt.value = k;
+    opt.textContent = k;
+    selector.appendChild(opt);
+  });
+
+  // primera render
+  const firstKey = selector.value || Object.keys(data)[0];
+  renderForKey(firstKey);
+
+  selector.addEventListener("change", () => renderForKey(selector.value));
+}
+
+init();
